@@ -22,3 +22,30 @@ h2inDiv.textContent = 'I am in a div';
 myDiv.appendChild(h2inDiv);
 myDiv.appendChild(paragraph);
 container.appendChild(myDiv);
+
+//EVENTS
+const btn = document.querySelector('#btn');
+
+function alertFunction(e) {
+  console.log(e.target); //e.target gibt das Element aus.
+  e.target.style.backgroundColor = 'blue'; // verändert die Farbe des Targets.
+  alert("YAY! YOU DID IT!");
+}
+btn.addEventListener('click', alertFunction);
+
+//btn.onclick = () => alert("Hello World!");
+// https://javascript.info/arrow-functions-basics
+
+// Adding Events to multiple Buttons
+// buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+    alert(button.id);
+  });
+});
+
